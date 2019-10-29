@@ -1,0 +1,27 @@
+title = "Category"
+url = "/category/:slug*"
+layout = "default"
+is_hidden = 0
+
+[products]
+category = ":slug"
+setPageTitle = 1
+includeVariants = 1
+includeChildren = 1
+perPage = 9
+
+[productsFilter]
+category = ":slug"
+showPriceFilter = 1
+==
+<div class="container">
+    <div class="row">
+        <div class="col-12 col-md-4">
+            {% component 'productsFilter' %}
+        </div>
+        <div class="col-12 col-md-8">
+            <h2>{{ products.category.name }}</h2>
+            {% component 'products' %}
+        </div>
+    </div>
+</div>
